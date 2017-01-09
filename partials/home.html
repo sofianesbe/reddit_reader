@@ -1,0 +1,91 @@
+
+<div class="section">
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Post : </h2>
+                <form role="form" method="POST" action="#">
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label for="input1">Term</label>
+                            <input type="text" name="term" class="form-control" id="term" ng-required="true" ng-model="term" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="input1">limit</label>
+                            <input type="text" name="limit" class="form-control" id="limit" ng-required="true" ng-model="limit" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="input1">offset</label>
+                            <input type="text" name="offset" class="form-control" id="offset" ng-required="true" ng-model="offset" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <button type="button" ng-click="getPost()" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" ng-show="!posts || posts.length == 0">
+            No Post
+        </div>
+        <div class="row" ng-repeat="post in posts">
+            <div class="col-md-1">
+                <p>{{post.date}}</p>
+            </div>
+            <div class="col-md-6">
+                <h3><a href="{{post.postUrl}}">{{post.postId}} - {{post.postTitle}}</a> <small>by {{post.author}}</small></h3>
+                <p>{{post.postContent}}</p>
+                <a class="btn btn-primary" href="{{post.postUrl}}">Read More <i class="fa fa-angle-right"></i></a>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Comment : </h2>
+                <form role="form" method="POST" action="#">
+                    <div class="row">
+                        <div class="form-group col-lg-4">
+                            <label for="input1">PostId</label>
+                            <input type="text" name="postId" class="form-control" id="postId" ng-required="true" ng-model="postId" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="input1">limit</label>
+                            <input type="text" name="limit" class="form-control" id="limit" ng-required="true" ng-model="limit" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label for="input1">offset</label>
+                            <input type="text" name="offset" class="form-control" id="offset" ng-required="true" ng-model="offset" />
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <button type="button" ng-click="getComment()" class="btn btn-primary">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" ng-show="!posts || posts.length == 0">
+            No Comment
+        </div>
+        <div class="row" ng-repeat="comment in comments">
+            <div class="col-md-1">
+                <p>{{comment.date}}</p>
+            </div>
+            <div class="col-md-6">
+                <h3>postId: {{comment.postId}} - commentId: {{comment.commentId}} <small>by {{comment.author}}</small></h3>
+                <p>{{comment.commentContent}}</p>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+</div>

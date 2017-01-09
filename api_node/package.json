@@ -1,0 +1,12 @@
+{
+    "name": "node-api",
+    "version": "1.0.0",
+    "description": "A simple RESTFul API for Reddit",
+    "author": "Sofiane Belghali",
+    "license": "MIT",
+    "main": "server.js",
+    "dependencies": {
+        "express": "~4.0.0",
+        "body-parser": "~1.0.1"
+    }
+}
