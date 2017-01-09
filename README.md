@@ -30,7 +30,7 @@ http http://localhost:8765/api/posts/:term/:limit/:offset
 
 Getting posts with term
 ```
-http http://localhost:8765/api/posts/:term/:limit/:offset
+http http://localhost:8765/api/comments/:postid/:limit/:offset
 ```
 
 ## Modules used
